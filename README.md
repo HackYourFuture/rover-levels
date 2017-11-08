@@ -43,16 +43,16 @@ instructions: |-          #
                           #
 rows: 5                   # Number of rows in the level (i.e. grid height).
 columns: 5                # Number of columns in the level (i.e. grid width).
-start: [0, 0, 'down']     # Start position and direction ('up', 'down', 'left', 'right')
+start: [0, 0, "down"]     # Start position and direction ("up", "down", "left", "right")
 goal:  [4, 4]             # Goal position. This is actually optional, so you could in theory
                           # create some playground level without a goal.
                           #
 items:                    # The items in the level:
-  - [1, 0, 'tree']        # This adds a tree at {x: 1, y: 0}.
-  - [1, 1, 'water']       # This adds water at {x: 1, y: 1}.
-  - [0, 1, 'apple']       # This adds an apple at {x: 0, y: 1}.
-  - [2, 1, 'key', {...}]  # This adds a key at {x: 2, y: 1}. See below for keys & locks.
-  - [3, 3, 'lock', {...}] # This adds a lock at {x: 3, y: 3}. See below for keys & locks.
+  - [1, 0, "tree"]        # This adds a tree at {x: 1, y: 0}.
+  - [1, 1, "water"]       # This adds water at {x: 1, y: 1}.
+  - [0, 1, "apple"]       # This adds an apple at {x: 0, y: 1}.
+  - [2, 1, "key", {...}]  # This adds a key at {x: 2, y: 1}. See below for keys & locks.
+  - [3, 3, "lock", {...}] # This adds a lock at {x: 3, y: 3}. See below for keys & locks.
                           #
 initialCode: |-           # Here you can place initial code for the player. This property
   // Write your code here # is optional.
@@ -88,7 +88,7 @@ When defining key or lock items, you should specify additional properties, e.g.
 
 ```yaml
 items:
-  - [1, 1, 'key', {color: 'red', keyType: 'number'}]
+  - [1, 1, "key", {color: "red", keyType: "number"}]
 ```
 
 This creates a **red** key of type `number`. When the program is run, any value between `1` and `10`
@@ -101,7 +101,7 @@ To create a key with one specific static value, use:
 
 ```yaml
 items:
-  - [1, 1, 'key', {color: 'red', keyType: 'number', value: 5}]
+  - [1, 1, "key", {color: "red", keyType: "number", value: 5}]
 ```
 
 Available key colors are `'yellow'`, `'red'`, `'green'`, `'blue'` and `'rainbow'`. In our levels,
@@ -116,7 +116,7 @@ Like keys, locks also accept more properties.
 
 ```yaml
 items:
-  - [3, 3, 'lock', {color: 'green', accept: '({green}) => -green'}]
+  - [3, 3, "lock", {color: "green", accept: "({green}) => -green"}]
 ```
 
 The `color` property accepts the same values as the `key` color properties. The `accept` property
@@ -128,7 +128,7 @@ serve as input, so that their unlock scheme displays all possible combinations:
 
 ```yaml
 items:
-  - [3, 3, 'lock', {color: 'rainbow', acceptsKeys: ['red', 'blue'], accept: '({red, blue}) => red && blue'}]
+  - [3, 3, "lock", {color: "rainbow", acceptsKeys: ["red", "blue"], accept: "({red, blue}) => red && blue"}]
 ```
 
 By default, `acceptsKeys` is an array containing only the color of the lock.
