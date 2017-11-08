@@ -85,6 +85,20 @@ scoring:                  # Also optional, this is used to give the player less 
         five lines?       #
 ```
 
+### Read-only code
+
+In your initial code, it is possible to mark sections as read only. Use the special markers `----` and `++++` to
+mark a section as read only:
+
+```js
+// Write your code here.
+
+// ---- This code cannot be modified by the player.
+move();
+move();
+// ++++ After this line, the code is editable again.
+```
+
 ### Keys
 
 When defining key or lock items, you should specify additional properties, e.g.
