@@ -80,3 +80,54 @@ scoring:                  # Also optional, this is used to give the player less 
       message: |-         #
         Can you do it in  # Display this message.
         five lines?       #
+
+### Keys
+
+When defining key or lock items, you should specify additional properties, e.g.
+
+```yaml
+items:
+  - [1, 1, 'key', {color: 'red', keyType: 'number'}]
+```
+
+This creates a **red** key of type `number`. When the program is run, any value between `1` and `10`
+is assigned to this key.
+
+Available types are the primitive JS types `boolean`, `number`, and `string` as well as `any`, which
+may get a value of any of these types.
+
+To create a key with one specific static value, use:
+
+```yaml
+items:
+  - [1, 1, 'key', {color: 'red', keyType: 'number', value: 5}]
+```
+
+Available key colors are `'yellow'`, `'red'`, `'green'`, `'blue'` and `'rainbow'`. In our levels,
+we typically use yellow keys for `boolean`, red keys for `number`, green keys for `string`, and rainbow
+keys for `any`. Blue keys are used in boolean levels where we want to combine multiple keys.
+
+But, there's no technical requirement for these color mappings!
+
+### Locks
+
+Like keys, locks also accept more properties.
+
+```yaml
+items:
+  - [3, 3, 'lock', {color: 'green', accept: '({green}) => -green'}]
+```
+
+The `color` property accepts the same values as the `key` color properties. The `accept` property
+is a string containing a JS *arrow* function that maps an object with the key colors ars keys keys
+to the required value to unlock the lock with.
+
+For locks that operate on multiple keys, use the `acceptsKeys` property to specify which keys
+serve as input, so that their unlock scheme displays all possible combinations:
+
+```yaml
+items:
+  - [3, 3, 'lock', {color: 'rainbow', acceptsKeys: ['red', 'blue'], accept: '({red, blue}) => red && blue'}]
+```
+
+By default, `acceptsKeys` is an array containing only the color of the lock.
