@@ -6,6 +6,7 @@ instructions: |-
   it accepts a boolean, and not a number. Can you figure out
   what to do with the key to unlock the door?
 
+
 rows: 5
 columns: 4
 
