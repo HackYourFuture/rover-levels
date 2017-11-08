@@ -80,6 +80,7 @@ scoring:                  # Also optional, this is used to give the player less 
       message: |-         #
         Can you do it in  # Display this message.
         five lines?       #
+```
 
 ### Keys
 
