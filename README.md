@@ -46,6 +46,9 @@ columns: 5                # Number of columns in the level (i.e. grid width).
 start: [0, 0, "down"]     # Start position and direction ("up", "down", "left", "right")
 goal:  [4, 4]             # Goal position. This is actually optional, so you could in theory
                           # create some playground level without a goal.
+goalApples: 6             # In case your level has apples, specify how many the player should
+                          # have in order to finish the level.
+dark: false               # Set to true to make the level dark (i.e. invisible items).
                           #
 items:                    # The items in the level:
   - [1, 0, "tree"]        # This adds a tree at {x: 1, y: 0}.
