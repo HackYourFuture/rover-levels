@@ -1,0 +1,4 @@
+name: Advanced loops
+
+description: |-
+  Take a closer look at the `for` loop, look at `for ... of` and `for ... in`, and meet the `while` loop.
