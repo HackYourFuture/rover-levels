@@ -5,5 +5,6 @@ chapters:
   - boolean
   - functions
   - arrays
+  - json
   - loops-advanced
   - algorithms

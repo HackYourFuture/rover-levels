@@ -17,6 +17,11 @@ instructions: |-
 
   Read about arrays in [this MDN article](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
+  *Tips*:
+
+  - Don't worry about the code that is written already. You may try to follow it, but the point is to modify
+    the arrays!
+
 rows:    5
 columns: 5
 start:   [0, 4, 'up']
