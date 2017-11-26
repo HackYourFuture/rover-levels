@@ -1,7 +1,14 @@
 {
+  "name": "rover-levels",
+  "description": "Levels for the Rover game",
+  "license": "MIT",
+  "author": "Joost Lubach",
   "dependencies": {
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "js-yaml": "^3.10.0"
+  },
+  "scripts": {
+    "start": "node ."
   }
 }
